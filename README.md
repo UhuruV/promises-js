@@ -134,8 +134,8 @@ console.log(message); //resolve promise3.
 
 Note: The above code is executed in sequence, one after another and the last one will wait for 3 seconds before execution.
 
-We can however use _Promise.all()_ and _Promise.race()_ to execute multiple promises.
-The _.all_ evaluates all the Promises and executes the .then () method when all the _Promises_ within it's _promise array_ have been fullfilled. It returns an array of the promise results.
+We can however use __Promise.all()__ and __Promise.race()__ to execute multiple promises.
+The __.all__ evaluates all the Promises and executes the .then () method when all the __Promises__ within it's __promise array__ have been fullfilled. It returns an array of the promise results.
 
 The .race on the other hand executes as soon any Promise on the Promise array has completed execution. .race does not wait for other Promises and resolves as soon as one Promises is resolved. Check out the code in promise.js file to understand this further.
 
