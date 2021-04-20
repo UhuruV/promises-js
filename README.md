@@ -58,17 +58,17 @@ reject('Mum is not happy!');
 
 ### The Second Part
 
-/_ Define what to do when the successful condition(i.e. resolve()) is / met, and what to do when the not successful condition(i.e. / reject()) is met. _/
+/_ Define what to do when the successful condition(i.e. resolve()) is  met, and what to do when the not successful condition(i.e. / reject()) is met.
 
 ```promise.then((message)=>{
 console.log(message);
-/_ define the resolve() function,
-/ in other words, what to do when the promise is successful. _/
+
+//define the resolve() function, in other words, what to do when the promise is successful.
 })
 .catch(()=>{
 console.log(message);
-/_ define the reject() function,
-/ in other words, what to do when the promise is NOT successful._/
+
+//define the reject() function, in other words, what to do when the promise is NOT successful.
 
 })```
 
