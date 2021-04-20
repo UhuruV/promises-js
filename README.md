@@ -65,7 +65,9 @@ reject('Mum is not happy!');
 
  Define what to do when the successful condition(i.e. resolve()) is  met, and what to do when the not successful condition(i.e. / reject()) is met. 
 
+
 ```
+<code>
 promise.then((message)=>{
 console.log(message);
 
@@ -77,6 +79,7 @@ console.log(message);
 //define the reject() function, in other words, what to do when the promise is NOT successful.
 
 })
+</code>
 ```
 
 
