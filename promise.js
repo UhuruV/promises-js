@@ -1,65 +1,112 @@
 
 // /*  #### ----ES6 SYNTAX---- ####  */
 let preparedForExams = true;
- /* Creating a promise */
- const willPassExams = new Promise(
+/* Creating a promise */
+const willPassExams = new Promise(
     (resolve, reject) => {
-         if (preparedForExams) {
+        if (preparedForExams) {
             const results = {
-               exam: 'Passed',
+                exam: 'Passed',
                 marks: 500
             }
             resolve(results);
         }
-         else {
+        else {
             const reason = new Error("You didn't prepare enough for exams");
             reject(reason);
         }
-         }
+    }
 );
 
- /* Chaining a promise */
- //2nd Promise. showOff results to friends
+/* Chaining a promise */
+//2nd Promise. showOff results to friends
 
- const showOff = function (result) {
-     const message = `Hey I ${result.exam} my exams and got ${result.marks} marks`;
-     console.log(message);
+const showOff = function (result) {
+    const message = `Hey I ${result.exam} my exams and got ${result.marks} marks`;
+    console.log(message);
     return Promise.resolve(message);
- }
+}
 
- /* Consuming the promise */
- const checkResults = function () {
-     willPassExams
+/* Consuming the promise */
+const checkResults = function () {
+    willPassExams
         .then(showOff)
         .then((fullfilled) => {
             console.log(fullfilled);
         }
         ).catch((error) => {
-           console.log(error.message);
+            console.log(error.message);
         });
- }
+}
 checkResults();
+
+/* #####----ES7 SYNTAX---- #### */
+
+/* Creating a promise */
+const willPassExams = new Promise(
+    (resolve, reject) => {
+        if (preparedForExams) {
+            const results = {
+                exam: 'Passed',
+                marks: 500
+            }
+            resolve(results);
+        }
+        else {
+            const reason = new Error("You didn't prepare enough for exams");
+            reject(reason);
+        }
+    }
+);
+
+/* Second Promise */
+
+async function showOff(results) {
+    return new Promise((resolve, reject) => {
+        var message = `Hey I ${results.exam} my exams and got ${results.marks} marks`;
+        resolve(message);
+    });
+}
+
+async function checkResults() {
+    try {
+        let examResults = await willPassExams;
+        let message = await showOff(examResults);
+
+        console.log(message);
+    }
+    catch (error) {
+        console.log(error.message);
+    }
+}
+
+(
+    async () => {
+        checkResults();
+    }
+)();
+
 
 
 
 // .all() example
 var requestComplete = true;
 promise1 = new Promise((resolve, reject) => {
-  if (requestComplete)
-    resolve("data received from 1");
+    if (requestComplete)
+        resolve("data received from 1");
 })
 promise2 = new Promise((resolve, reject) => {
-  if (requestComplete)
-    resolve("data received from 2");
+    if (requestComplete)
+        resolve("data received from 2");
 })
 promise3 = new Promise((resolve, reject) => {
-  
-  setTimeout(()=>{
-  resolve("data received from 3");
-  }, 2000);
+
+    setTimeout(() => {
+        resolve("data received from 3");
+    }, 2000);
 })
-Promise.all([promise1, promise2, promise3]).then( (message) => {
-  console.log(message);
+Promise.all([promise1, promise2, promise3]).then((message) => {
+    console.log(message);
 })
 /*
 When you run this code, the Promise waits for all the Promises within the promise array to complete. Since the promise3 has a delay of 2 seconds, no output is shown for 2 seconds.
@@ -71,18 +118,18 @@ In this case, the message is an array that contains the messages from all of the
 // .race() example
 var requestComplete = true;
 promise1 = new Promise((resolve, reject) => {
-  if (requestComplete)
-    resolve("data received from 1");
+    if (requestComplete)
+        resolve("data received from 1");
 })
 promise2 = new Promise((resolve, reject) => {
-  if (requestComplete)
-    resolve("data received from 2");
+    if (requestComplete)
+        resolve("data received from 2");
 })
 promise3 = new Promise((resolve, reject) => {
-  setTimeout(()=>{resolve("data received from 3");}, 2000);
+    setTimeout(() => { resolve("data received from 3"); }, 2000);
 })
-Promise.race([promise1, promise2, promise3]).then( (message) => {
-  console.log(message);
+Promise.race([promise1, promise2, promise3]).then((message) => {
+    console.log(message);
 })
 
 /*
