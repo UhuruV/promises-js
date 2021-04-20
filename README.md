@@ -33,7 +33,8 @@ In the second part we define the actual resolve() and reject() functions.
 
 ###### Let's add some meaningful comments to the function below to see how promises work
 
-<p><code>
+<code>
+
  Every Promise() structure has 2 parts 
 ### First Part           
  Create the Promise() and define the conditions of what is considered successful and not successful.
@@ -71,7 +72,7 @@ console.log(message);
 
 })```
 
-</code></p>
+</code>
 
 Note that if you run the code the output will be 'Mum is not Happy', if you update the boolean mumIsHappy to true the output will be the phone object.
 
