@@ -59,7 +59,7 @@ reject('Mum is not happy!');
 
 ### The Second Part
 
-/* Define what to do when the successful condition(i.e. resolve()) is  met, and what to do when the not successful condition(i.e. / reject()) is met. */
+ Define what to do when the successful condition(i.e. resolve()) is  met, and what to do when the not successful condition(i.e. / reject()) is met. 
 <code>
 ```promise.then((message)=>{
 console.log(message);
@@ -90,7 +90,7 @@ In the example below we create multiple promises:-
 
  <code> 
  
-var requestComplete = true;
+```var requestComplete = true;
 promise1 = new Promise((resolve, reject) => {
   if (requestComplete)
     resolve("data received from 1");
@@ -116,7 +116,7 @@ console.log(message);
 return promise3; //return promise3 when promise2 resolves.
 }).then((message) => {
 console.log(message); //resolve promise3.
-})
+})```
 
  </code>
 
