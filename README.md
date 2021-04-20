@@ -88,8 +88,7 @@ Multiple promises can be chained together using the .then() function. First prom
 
 In the example below we create multiple promises:-
 
-<code> 
- var requestComplete = true;
+```var requestComplete = true;
 promise1 = new Promise((resolve, reject) => {
   if (requestComplete)
     resolve("data received from 1");
@@ -115,9 +114,7 @@ console.log(message);
 return promise3; //return promise3 when promise2 resolves.
 }).then((message) => {
 console.log(message); //resolve promise3.
-})
-
- </code>
+})```
 
 Note: The above code is executed in sequence, one after another and the last one will wait for 3 seconds before execution.
 
