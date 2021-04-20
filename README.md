@@ -38,6 +38,7 @@ In the second part we define the actual resolve() and reject() functions.
  Create the Promise() and define the conditions of what is considered successful and not successful.
 
 <code>
+
 ```
 
 let promise = new Promise( (resolve, reject) => {
@@ -62,10 +63,10 @@ reject('Mum is not happy!');
 
 
 ### The Second Part
-
 Define what to do when the successful condition(i.e. resolve()) is  met, and what to do when the not successful condition(i.e. / reject()) is met. 
 
 <code>
+
 ```
 
 promise.then((message)=>{
