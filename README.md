@@ -31,13 +31,16 @@ In the second part we define the actual resolve() and reject() functions.
 .catch((message)=>{ ...Do this on reject })
 </code>
 
-###### Let's add some meaningful comments to the function below to see how promises work
+## Let's add some meaningful comments to the function below to see how promises work
 
  Every Promise() structure has 2 parts 
 ### First Part           
  Create the Promise() and define the conditions of what is considered successful and not successful.
 
-<code>```let promise = new Promise( (resolve, reject) => {
+<code>
+```
+
+let promise = new Promise( (resolve, reject) => {
 let momIsHappy = false; 
 /* This is an arbitrary variable and is NOT part of the Promise */
 if (momIsHappy){
@@ -52,8 +55,9 @@ resolve(phone);
 if (!mumIsHappy)
 //This condition is considered NOT successful, hence invoke reject()
 reject('Mum is not happy!');
-})```</code>
-
+})
+```
+</code>
 
 
 
